@@ -6,7 +6,9 @@ import {HttpClient, HttpEventType, HttpRequest} from '@angular/common/http';
   template: `
     <div>
       <input #file 
-             type="file"
+             type ="file"
+             id   ="eyal"
+             name ="eyal"
              multiple 
              (change)="upload(file.files)" />
       <br/>

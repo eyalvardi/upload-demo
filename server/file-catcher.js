@@ -5,8 +5,20 @@ var fs      = require('fs');
 var app     = express();
 
 var DIR = './uploads/';
+var upload = multer({dest: DIR});
 
-var upload = multer({
+/*var storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads')
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.fieldname + '-' + Date.now())
+  }
+});*/
+/*
+var upload = multer({storage: storage});
+*/
+/*var upload = multer({
   dest: DIR,
   rename: function (fieldname, filename) {
     return filename + Date.now();
@@ -17,7 +29,7 @@ var upload = multer({
   onFileUploadComplete: function (file) {
     console.log(file.fieldname + ' uploaded to  ' + file.path);
   }
-});
+});*/
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -44,7 +56,7 @@ app.get('/api', function (req, res) {
   res.end('file catcher example');
 });
 
-app.post('/api',upload.single(), function (req, res) {
+app.post('/api',upload.any(), function (req, res) {
   res.end('File is uploaded');
 });
 
