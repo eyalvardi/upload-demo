@@ -2,9 +2,12 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
+  template: `
+  <div>
+    <h1>Magic Upload Demo</h1>
+    <magic-upload></magic-upload>
+  </div>
+  `})
 export class AppComponent {
   title = 'app';
 }
