@@ -4,6 +4,7 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { MagicUploadComponent } from './magic-upload.component';
+import {FileUploadModule} from 'primeng/primeng';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { MagicUploadComponent } from './magic-upload.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FileUploadModule
   ],
   providers: [
   ],
